@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenTask | Premium To-Do Experience</title>
+    <meta name="description" content="A premium, sleek to-do application for daily task management with glassmorphism design.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons for premium feel -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="app-container">
+        <header>
+            <div class="brand">
+                <i data-lucide="check-circle" class="logo-icon"></i>
+                <h1>ZenTask</h1>
+            </div>
+            <p class="subtitle">Organize your day with clarity</p>
+        </header>
+
+        <section class="input-section">
+            <div class="input-wrapper">
+                <input type="text" id="taskInput" placeholder="Add a new task..." aria-label="New task description">
+                <button id="addTaskBtn" aria-label="Add Task">
+                    <i data-lucide="plus"></i>
+                </button>
+            </div>
+        </section>
+
+        <div class="lists-container">
+            <section class="task-list-section pending-tasks">
+                <h2><i data-lucide="list-todo"></i> Pending Tasks</h2>
+                <ul id="pendingList" class="task-list">
+                    <!-- Tasks will be injected here -->
+                </ul>
+            </section>
+
+            <section class="task-list-section completed-tasks">
+                <h2><i data-lucide="check-square"></i> Completed Tasks</h2>
+                <ul id="completedList" class="task-list">
+                    <!-- Completed tasks will be injected here -->
+                </ul>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 ZenTask. Designed for Focus.</p>
+        </footer>
+    </main>
+
+    <!-- Modal for editing -->
+    <div id="editModal" class="modal">
+        <div class="modal-content glass">
+            <h3>Edit Task</h3>
+            <input type="text" id="editTaskInput">
+            <div class="modal-actions">
+                <button id="cancelEdit" class="btn-secondary">Cancel</button>
+                <button id="saveEdit" class="btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
